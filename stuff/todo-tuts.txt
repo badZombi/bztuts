@@ -1,0 +1,125 @@
+sendmail on DO:
+
+	edit /ets/hosts :
+
+		127.0.0.1	localhost zombizu2 badzombi badzombi.com
+
+	--
+
+	badzombi.com.  IN TXT "v=spf1 mx a ip4:162.243.125.231/32 ~all"
+
+	apt-get install sendmail-bin
+
+	edit /etc/mail/sendmail.mc :
+
+		dnl #
+		dnl # Masquerading options
+		FEATURE(`always_add_domain')dnl
+		MASQUERADE_AS(`badzombi.com')dnl
+		FEATURE(`allmasquerade')dnl
+		FEATURE(`masquerade_envelope')dnl
+		dnl # Default Mailer setup
+		MAILER_DEFINITIONS
+		MAILER(`local')dnl
+		MAILER(`smtp')dnl
+		define(`MAIL_HUB', `badzombi.com.')dnl
+		define(`LOCAL_RELAY', `badzombi.com.')dnl
+
+	--
+
+	sudo sendmailconfig
+
+	test:
+	echo -e "To: john@badzombi.com\nSubject: Test\nTest\n" | sendmail -bm -t -v
+
+------------------------------------------------------------------------------------
+
+install phpliteadmin:
+
+	download form here:
+
+	https://code.google.com/p/phpliteadmin/downloads/list
+
+	mkdir /var/www/dbadmin
+
+	extract & upload these files:
+
+		phpliteadmin.php
+		phpliteadmin.config.sample.php
+
+	cp /var/www/dbadmin/phpliteadmin.config.sample.php /var/www/dbadmin/phpliteadmin.config.php
+
+	nano /var/www/dbadmin/phpliteadmin.config.php
+
+	change values:
+
+		$password = 'password';
+		$directory = '../app/db';
+		$cookie_name = 'zombizudbadmin';
+
+	mkdir /var/www/app/db
+
+	chmod 777 /var/www/app/db
+
+
+------------------------------------------------------------------------------------
+
+add auth to lighttpd:
+
+	lighty-enable-mod auth
+
+	sudo nano /tor/authfiles/.lighttpdpassword
+
+	add: 
+
+		dbadmin:supersecterstuffhere
+
+	sudo nano /etc/lighttpd/lighttpd.conf
+
+	add:
+
+		auth.debug = 2
+		auth.backend = "plain"
+		auth.backend.plain.userfile = "/tor/authfiles/.lighttpdpassword"
+
+		auth.require = ( "/dbadmin/" =>
+			(
+				"method" => "basic",
+				"realm" => "Password protected area",
+				"require" => "user=dbadmin"
+			)
+		)
+
+
+
+	/etc/init.d/lighttpd restart
+
+
+------------------------------------------------------
+
+run tor on boot...
+
+	edit torrc set to dun as daemon
+	$ update-rc.d tor defaults
+	reboot and test?
+	$ lsof -ni|grep tor
+
+------------------------------------------------------
+
+crontab
+
+	sudo apt-get update
+	sudo apt-get install cron
+
+	sudo apt-get install chkconfig
+	sudo chkconfig cron on
+	sudo service cron start
+	sudo service cron status
+
+	reboot 
+
+	sudo service cron status
+
+	sudo crontab -e
+
+		make your changes

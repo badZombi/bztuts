@@ -1,7 +1,7 @@
 
 
-<div class="content">
-	<h1>Part 4: Log in to your droplet...</h1>
+<div class="row"><div class="col-lg-12">
+	<h4>Part 4: Log in to your droplet...</h4>
 	<p>You need to copy your new IP address from this page. </p>
 	<p class="image"><?= img('assets/tut_images/'.$tut.'/IP_address.jpg') ?></p>
 	<p>Now we're gonna use PuTTY...</p>
@@ -17,4 +17,4 @@
 	<p class="image"><?= img('assets/tut_images/'.$tut.'/logged_in.jpg') ?></p>
 	<p class="tiny">I slightly edited the image but you should see something quite similar.</p>
 	<p>If everything went well, you are now logged into your droplet and we can really get started.</p>
-</div>
+</div></div>

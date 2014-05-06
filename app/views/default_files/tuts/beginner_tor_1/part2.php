@@ -1,7 +1,7 @@
 
 
-<div class="content">
-	<h1>Part 2: Install PuTTY &amp; generate a new key pair...</h1>
+<div class="row"><div class="col-lg-12">
+	<h4>Part 2: Install PuTTY &amp; generate a new key pair...</h4>
 	<p>Download PuTTY <a href="http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html" target="_blank">from here</a> and install. You'll need at least PuTTY itself, PuTTYgen and Pageant to follow everything in this guide. I'd suggest just installing the full package.</p>
 	<p>Once installed, run PuTTYgen. By default SSH-2 RSA should be selected. All you need to do is select your key strength. I prefer 4096 bits. Set it to whatever you like in the bottom right text box. You don't need to go higher but I usually do. It takes a bit longer but I think its worth it. Once you're all set, click the Generate button.</p>
 	<p class="image"><?= img('assets/tut_images/'.$tut.'/1_puttygen1.jpg') ?></p>
@@ -15,4 +15,4 @@
 	<p>You can choose to passphrase protect the private key or not. Sometimes I do and sometimes I don't. It really just depends on how much security I feel is needed on a case by case basis. For the purpose of this tutorial I wont be adding a passphrase. Use you best judgment based on the security you require as well as how securely you store your keys. If you choose to add one, enter it and repeat it in the text boxes. Whether you choose to passphrase protect or not, it wont really change much in this tut. </p>
 	<p>Now click &quot;Save private key&quot; ... if you did not use a passphrase it will confirm that this was intentional... choose where to store it just as you did with the public key. save the file as whatever_you_want.ppk</p>
 	<p>We're now done with PuTTYgen! Close the window and we'll move on...</p>
-</div>
+</div></div>

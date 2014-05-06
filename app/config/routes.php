@@ -41,7 +41,7 @@
 $route['default_controller'] = "welcome";
 $route['404_override'] = 'fourohfour';
 
-//$route['tuts/beginner-tor-vm-setup'] = 'tuts/beginner_tor_vm_setup';
+//$route['qr/1/2/3'] = 'qr/1zXHMKNAS6d9DCbcNS66FYdZPKPMaGq3n/0.01/test';
 
 
 

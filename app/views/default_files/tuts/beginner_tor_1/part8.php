@@ -1,7 +1,7 @@
 
 
-<div class="content">
-	<h1>Part 8: Install and configure an http server...</h1>
+<div class="row"><div class="col-lg-12">
+	<h4>Part 8: Install and configure an http server...</h4>
 	<p>We're gonna use lighttpd for this server. Its fast and easy to configure. Also seems to take quite a few anonymity concerns out of the equation by default. It's not &quot;the best&quot; in my opinion but it is more than adequate for this tut. </p>
 	<p>We'll use apt-get just as we did for tor:</p>
 	<pre>apt-get install lighttpd php5-cgi
@@ -25,4 +25,4 @@ server.dir-listing = &quot;disable&quot;</pre>
 	<p>One last command to wrap this part up:</p>
 	<pre>/etc/init.d/lighttpd restart</pre>
 	<p>this restarts the http (web) server with the new settings.</p>
-</div>
+</div></div>

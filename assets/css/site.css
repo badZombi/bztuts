@@ -1,10 +1,9 @@
 body,td,th {
-	font-family: Lucida Console, Monaco, monospace;
+	/*font-family: Lucida Console, Monaco, monospace;*/
 	color: #FFF;
-	font-size: 13px;
-	line-height: 14px;
-	margin:0;
-	padding:0 10px;
+	/*font-size: 13px;
+	line-height: 14px;*/
+	
 }
 body {
 	background-color: #000;
@@ -14,6 +13,12 @@ a {
 	color: #FF0;
 	text-decoration: none;
 }
+
+a:hover {
+	color: #fff;
+	text-decoration: none;
+}
+
 .tiny {
 	font-size: 10px;
 	color: #CCC;
@@ -26,48 +31,31 @@ pre {
 	font-size: 12px;
 	margin-left: 20px;
 	color: #0FF;
+	background-color: #2e2e2e;
+	border-color: #555555;
+}
+.image{
+	text-align: center;
+
+}
+
+.image img{
+	max-width: 90%;
+	height:auto;
 }
 .output {
 	color: #0F0;
 }
 
-h1{
-	padding:5px 0px;
-	margin-left:-10px;
-	font-size:18px;
-	line-height: 19px;
+.navbar-brand{
+	padding-top:8px;
+	padding-bottom:0px;
 }
 
-.content{
-	margin:10px auto;
-	width:90%;
+.tutnav{
+	padding:5px 0 20px 0;
 }
 
-.image{
-	text-align:center;
-	margin:5px auto;
-}
-.image img{
-	max-width:100%;
-	height:auto;
-}
-
-.header{
-	padding:10px 0;
-	margin:0 0 15px 0;
-	clear:both;
-	width:100%;
-	background-color: #000;
-}
-
-.footer{
-	text-align: center;
-	width:100%;
-	background-color: #000;
-	padding:20px 0;
-	margin:20px 0;
-}
-
-.footer .small{
-	font-size:12px;
+.fppic{
+	margin:0 0 15px 20px;
 }

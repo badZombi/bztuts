@@ -1,7 +1,7 @@
 
 
-<div class="content">
-	<h1>Part 9.1: A little info on using screen...</h1>
+<div class="row"><div class="col-lg-12">
+	<h4>Part 9.1: A little info on using screen...</h4>
 	<p>In the next step we'll be using &quot;Screen&quot; to manage tor. This will allow it to keep running independent of your local computer/connection etc.</p>
 	<p>We'll be using the following command to start tor using screen:</p>
 	<pre>screen tor</pre>
@@ -19,10 +19,10 @@
 	<pre>screen -r 5934.pts-1.zombizu</pre>
 	<p>with that, (obviously using your own id) you should now be reconnected as if you had just run the command yourself.</p>
 	<p>Ok... moving on...</p>
-</div>
-<div class="content"><hr></div>
-<div class="content">
-	<h1>Step 9.2: Run and test your new hidden service...</h1>
+</div></div>
+<div class="row"><div class="col-lg-12"><hr></div></div>
+<div class="row"><div class="col-lg-12">
+	<h4>Step 9.2: Run and test your new hidden service...</h4>
 	<p>If you didn't run tor in the last little sub-section, do it now:</p>
 	<pre>screen tor</pre>
 	<p>You should see some output... ultimately ending in something like <span class="output">[notice] Bootstrapped 100%: Done.</span></p>
@@ -53,4 +53,4 @@
 	<p>now back in your browser go to http://youronionaddress.onion/info.php</p>
 	<p class="image"><?= img('assets/tut_images/'.$tut.'/php_test.jpg') ?></p>
 	<p>Congratulations! You now have everything set up and running properly! This is good for a test/practice server. Please read <?= anchor('tuts/'.$this->uri->segment(2).'/disclaimer', 'my disclaimer') ?> and make sure you understand that this is not a &quot;properly secured&quot; install. If you life or liberty would be dependent on the anonymity of this website... there is a LOT more work you will need to do to assure your safety. </p>
-</div>
+</div></div>

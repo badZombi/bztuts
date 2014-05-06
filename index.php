@@ -79,6 +79,9 @@ if (defined('ENVIRONMENT'))
  */
 	$application_folder = 'app';
 
+	$db_folder = 'db';
+	define('DBPATH', $db_folder.'/');
+
 /*
  * --------------------------------------------------------------------
  * DEFAULT CONTROLLER
@@ -147,6 +150,7 @@ if( ! ini_get('date.timezone') )
 	{
 		chdir(dirname(__FILE__));
 	}
+
 
 	if (realpath($system_path) !== FALSE)
 	{

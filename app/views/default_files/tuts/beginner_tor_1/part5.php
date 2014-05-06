@@ -1,7 +1,7 @@
 
 
-<div class="content">
-	<h1>Part 5: Update, upgrade... save a quick snapshot...</h1>
+<div class="row"><div class="col-lg-12">
+	<h4>Part 5: Update, upgrade... save a quick snapshot...</h4>
 	<p>This step is really quick. We want to upgrade the system and install a couple tools and things we may need in the future.</p>
 	<p>Enter the following commands one by one. </p>
 	<pre>apt-get update
@@ -15,4 +15,4 @@ apt-get install nano screen build-essential libevent-dev openssl zlib1g-dev libs
 	<p>It should only take a moment or two to shut down. Once its done, click the &quot;Snapshots&quot; Icon:</p>
 	<p class="image"><?= img('assets/tut_images/'.$tut.'/snapshots_menu.JPG') ?></p>
 	<p>Enter a name... something like &quot;D7x64 - updated, upgraded tools installed&quot; then click the big blue &quot;Take Snapshot&quot; button. It will take a few more moments and should then auto boot your image. (Sometimes it will fail to auto-start your instance after an image... if that happens just click the big blue &quot;Boot&quot; button and you should be where you need to be to continue...</p>
-</div>
+</div></div>

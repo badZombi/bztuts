@@ -3,7 +3,12 @@
 class Tuts extends MY_Controller {
 
 	function index(){
-		redirect('/');
+		$data = array(
+		   'title' => 'Tutorial list',
+		   'view' => 'tuts/tuts_list'
+		);	
+
+		$this->template->load($data);
 	}
 
 	function beginner_tor_vm_setup($page = FALSE){

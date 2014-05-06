@@ -6,8 +6,9 @@
 	<body>
 		
 		<? $this->load->view($tpl_path.'header'); ?>
+		<div class="container">
 		<?= $body ?>
 		<? $this->load->view($tpl_path.'footer'); ?>
-
+		</div>
 	</body>
 </html>

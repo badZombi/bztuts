@@ -11,6 +11,7 @@ class Donate extends MY_Controller {
 		$this->form_validation->set_error_delimiters('<span class="help-inline">', '</span>');
 
 		if ($this->form_validation->run() == true){
+
 			$ins = array();
 
 			if($this->input->post('display_name')){
@@ -25,6 +26,10 @@ class Donate extends MY_Controller {
 			} else {
 				$ins['comment'] = NULL;
 				$ins['txnid'] = md5(time());
+			}
+
+			if($this->input->post('amount')){
+				$ins['intent'] = $this->input->post('amount');
 			}
 
 			$url = 'https://blockchain.info/api/receive?method=create&address=18WuzkmxsJZFSrPDRvVtTydVwhmxLSVdhu&callback=http%3A%2F%2Ftuts.badzombi.com%2Fdonate%2Fcallback%3Ftxnid='.$ins['txnid'];
@@ -42,9 +47,25 @@ class Donate extends MY_Controller {
 
 		} else {
 
+			$preset_amounts = array(0.50, 1, 5, 10, 25);
+
+			$dropdown = array();
+
+			foreach($preset_amounts as $amount){
+
+				$url = 'https://blockchain.info/tobtc?currency=USD&value=1';
+				$one = @file_get_contents($url);
+				$donation = $one * $amount;
+				$donation = round($donation, 8);
+				$dropdown[$amount]['value'] = $donation;
+				$dropdown[$amount]['label'] = '$'.$amount.' ~ '.$donation.' BTC';
+
+			}
+
 			$data = array(
 			   'title' => 'Make a donation...',
-			   'view' => 'donate/comment_form'
+			   'view' => 'donate/comment_form',
+			   'dropdown' => $dropdown
 			);
 			
 			$this->template->load($data);
@@ -84,11 +105,37 @@ class Donate extends MY_Controller {
 		if($q->num_rows() == 1){
 			$res = $q->result();
 			$res = $res[0];
+
+			if($res->intent > 0){
+				$data = array(
+				   'title' => 'Thanks!',
+				   'view' => 'donate/thank_you',
+				   'address' => $res->input_address,
+				   'amount' => $res->intent,
+				);
+			} else {
+				die('nope');
+			}
 			
-			echo "Please send your donation to: <b><a href='bitcoin:".$res->input_address."?amount=0.5&label=BadZombiDonation'>".$res->input_address."</a></b>";
+			
+			$this->template->load($data);
+			
+			
 		} else {
 			die('Oh oh. Something went wrong. We couldnt generate a new donation address. Please refresh or go back and start over to try again.');
 		}
+	}
+
+	function qr($address, $amount, $label){
+
+		$this->load->library('ciqrcode');
+
+		header("Content-Type: image/png");
+		$params['data'] = 'bitcoin:'.$address.'?amount='.$amount.'&label='.$label;
+		$this->ciqrcode->generate($params);
+		
+		$this->load->library('ciqrcode');
+		
 	}
 
 }

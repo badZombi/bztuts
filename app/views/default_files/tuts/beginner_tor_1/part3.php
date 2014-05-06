@@ -1,7 +1,7 @@
 
 
-<div class="content">
-	<h1>Part 3: Create your first droplet...</h1>
+<div class="row"><div class="col-lg-12">
+	<h4>Part 3: Create your first droplet...</h4>
 	<p>Back in the DigitalOcean browser window, click the big green &quot;Create&quot; button...</p>
 	<p>From top to bottom... </p>
 	<ul>
@@ -17,4 +17,4 @@
 	<p class="image"><?= img('assets/tut_images/'.$tut.'/creating_droplet.JPG') ?></p>
 	<p>How long this takes is based on how busy the region you selected is and what options you chose on the last page. It shouldn't take much more than a minute for the example I used here. Once its done you'll be forwarded here:</p>
 	<p class="image"><?= img('assets/tut_images/'.$tut.'/droplet_created.JPG') ?></p>
-</div>
+</div></div>

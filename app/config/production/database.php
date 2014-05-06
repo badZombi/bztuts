@@ -48,11 +48,11 @@
 $active_group = 'default';
 $active_record = TRUE;
 
-$db['default']['hostname'] = 'localhost';
-$db['default']['username'] = 'prod_user';
-$db['default']['password'] = '92@rU#g@h!^_Iw0rEr=l';
-$db['default']['database'] = 'production';
-$db['default']['dbdriver'] = 'mysql';
+$db['default']['hostname'] = 'sqlite:'.DBPATH.'production/database.sqlite';
+$db['default']['username'] = '';
+$db['default']['password'] = '';
+$db['default']['database'] = '';
+$db['default']['dbdriver'] = 'pdo';
 $db['default']['dbprefix'] = '';
 $db['default']['pconnect'] = TRUE;
 $db['default']['db_debug'] = TRUE;

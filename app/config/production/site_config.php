@@ -5,17 +5,25 @@
 // basic settings
 	$config['logo'] = '';
 	$config['show_debug'] = FALSE;
-	$config['template'] = 'cryptoconversion';
-	$config['copyright_name'] = '';
-	$config['title_suffix'] = ' | Crypto Currency Calculator';
+	$config['template'] = 'default';
+	$config['copyright_name'] = 'BadZombi';
+	$config['title_suffix'] = ' | learn stuff...';
 	$config['topnav_fixed'] = FALSE;
 	$config['footer_fixed'] = FALSE;
 	$config['send_emails'] = TRUE;
 
+	$config['clearnet_address'] = 'tuts.badzombi.com';
+	$config['tor_address'] = 'zombizu5ifykigb2.onion';
 
-	$config['block_by_ip'] = TRUE; // site inactive or something. only allow people with password
-	$config['add_ip_pass'] = 'allthecoins';
+	$config['block_by_ip'] = FALSE; // site inactive or something. only allow people with password
+	$config['add_ip_pass'] = 'password';
 
+	$config['pagination_links'] = 5;
+	$config['default_pp'] = 12; // default number of items per inventory page when none specified 
+
+
+// cache settings
+	// $config['cache_ratings'] = FALSE;
 
 // social settings
 
@@ -26,8 +34,8 @@
 
 // contact info
 
-	$config['contact_email'] = 'contact@cryptoconversion.com';
-	$config['company_name'] = 'CryptoConversion.com';
+	$config['contact_email'] = 'tuts@badzombi.com';
+	$config['company_name'] = 'BadZombi.com';
 	$config['address'] = '123 Some St. ';
 	$config['city'] = 'City';
 	$config['state'] = 'ST';
@@ -41,7 +49,8 @@
 // default assets lists
 
 	$config['css'] = array(
-		    'style.css',
+			'bootstrap.min.css',
+		    'site.css',
 		);
 
 	$config['js'] = array(
@@ -55,7 +64,7 @@
 	$config['max_username_length'] = 30;
 	$config['bad_username_words'] = array(
 			'admin', 
-			'cryptoconversion',
+			'badzombi',
 		);
 
 

@@ -64,7 +64,7 @@ $autoload['libraries'] = array('database', 'session', 'template', 'carabiner', '
 |	$autoload['helper'] = array('url', 'file');
 */
 
-$autoload['helper'] = array('url', 'file', 'form', 'html');
+$autoload['helper'] = array('url', 'file', 'form', 'html', 'bs_helper');
 
 
 /*

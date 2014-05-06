@@ -1,7 +1,7 @@
 
 
-<div class="content">
-	<h1>Part 7: Configuring tor...</h1>
+<div class="row"><div class="col-lg-12">
+	<h4>Part 7: Configuring tor...</h4>
 	<p>The last step we completed on the server was creating a new tor configuration file from the sample config provided in the install package.</p>
 	<p>Using the &quot;Remote site&quot; file system in FileZilla, navigate to <strong>/etc/tor/</strong> just as you would navigate through folders in Windows Explorer. Optionally you can just type the path in to the text field above the file system and hit enter.</p>
 	<p>You should see 3 files in the folder. tor-socks.conf, torrc and the backup we made. If we really mess something up and want to start from scratch we can just delete torrc and rename the .bak file to have a fresh start.</p>
@@ -28,4 +28,4 @@ HiddenServicePort 80 127.0.0.1:8765</pre>
 	<pre>mkdir -p /tor/hidden_service</pre>
 	<p>This will create the directory for storing the individual hidden service info files, keys and whatnot.</p>
 	<p>Ok, we're done with the tor config.</p>
-</div>
+</div></div>
